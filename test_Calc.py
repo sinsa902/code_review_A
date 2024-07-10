@@ -9,3 +9,6 @@ class TestCalc(TestCase):
 
     def test_case1(self):
         self.assertEqual(1, 1)
+
+    def test_getgop(self, a, b)
+        self.assertEqual(6, cal.getGop(2, 4))
