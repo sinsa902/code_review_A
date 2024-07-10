@@ -1,2 +1,3 @@
 class Calc:
-    pass
+    def get_sum(self, a, b):
+        return a + b
