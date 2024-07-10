@@ -11,5 +11,5 @@ class TestCalc(TestCase):
         self.assertEqual(1, 1)
 
     def test_getsumsum(self):
-        self.assertEqual(6, self.cal.getsumsum(1, 2, 3))
+        self.assertEqual(6, self.cal.get_sumsum(1, 2, 3))
 
