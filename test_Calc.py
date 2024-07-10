@@ -5,7 +5,7 @@ from Calc import Calc
 
 class TestCalc(TestCase):
     def setUp(self):
-        cal = Calc()
+        self.cal = Calc()
 
     def test_case1(self):
         self.assertEqual(1, 1)
