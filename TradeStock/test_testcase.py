@@ -56,8 +56,8 @@ class TradeTestClass(TestCase):
         stock_lg.update_price(1000)
         stock_lg.update_price(8000)
 
-        function, set_buyplan(customer1, stock_samsung, 1000)
-        function, set_sellplan(customer2, stock_lg, 10)
+        function.set_buyplan(customer1, stock_samsung, 1000)
+        function.set_sellplan(customer2, stock_lg, 10)
 
         self.assertEqual(customer1.get_function_list, ["예약매수('삼성전자',1000)"])
         self.assertEqual(customer2.get_function_list, ["예약매도('LG전자',10)"])
