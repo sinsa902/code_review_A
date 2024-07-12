@@ -12,5 +12,5 @@ class Stock:
     def get_current_price(self):
         return self.__price_history[-1]
 
-    def get_last_7days_prices(self):
+    def get_price_list(self):
         return self.__price_history[-7:]
