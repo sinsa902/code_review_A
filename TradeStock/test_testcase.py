@@ -70,3 +70,39 @@ class TradeTestClass(TestCase):
         stock_lg.update_price(5000)
         self.assertEqual(customer1.get_stock_list, ["('삼성전자',??, ?? 계산필요)"])
         self.assertEqual(customer2.get_stock_list, [None])
+
+    def test_case4_makeinterface(self):
+        interface = InterfaceAPP()
+        interface.add_customer()
+        interface.get_customers()
+        interface.login()
+        interface.get_login_id()
+        interface.buy(stock, ea, price)
+        interface.sell(stock, ea, price)
+        interface.get_price(stock)
+        interface.get_revenue(customer)
+
+    def test_case4_makeKIUM(self):
+        app = KiumApp()
+        self.assertIsInstance(app, InterfaceAPP)
+
+        customer1 = Customer("jack")
+        customer1.add_initial_stock_list("[('삼성전자',10주,1500)")
+        app.add_customer(customer1, "pw1")
+        self.assertEqual(app.get_customers(), ["jack"])
+
+        rst = app.login(customer1.get_name(), "pw1")
+        self.assertEqual(True, rst)
+        app.login(customer1.get_name(), "pw2")
+        self.assertEqual(False, rst)
+
+        rst = app.get_login_id()
+        self.assertEqual("jack", rst)
+
+        app.buy(stock, ea, price)
+        app.sell(stock, ea, price)
+        app.get_price(stock)
+        app.get_revenue(customer)
+
+    def test_case5_makeNamu(self):
+        pass
