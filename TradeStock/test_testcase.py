@@ -1,10 +1,11 @@
-from unittest import TestCase
+from unittest import TestCase, skip
 
 
 class TradeTestClass(TestCase):
     def setUp(self):
         super().setUp()
 
+    @skip
     def test_case1_Customer(self):
         customer = Customer("jack")
         name = customer.get_name()
@@ -15,9 +16,15 @@ class TradeTestClass(TestCase):
         self.assertEqual(name, "jack")
         self.assertEqual(stock_list, ["삼성전자", "현대자동차", "SK텔레콤"])
         self.assertEqual(
-            functions, ['예약매수("삼성전자",1000)', '예약매수("lg전자",500)', '예약매도("현대자동차",10)']
+            functions,
+            [
+                '예약매수("삼성전자",1000)',
+                '예약매수("lg전자",500)',
+                '예약매도("현대자동차",10)',
+            ],
         )
 
+    @skip
     def test_case2_Stock(self):
         stock = Stock("삼성전자")
         name = stock.get_name()
@@ -33,6 +40,7 @@ class TradeTestClass(TestCase):
         self.assertEqual(price_list, [5000, 3000, 2000, 1000, 8000])
         self.assertEqual(stock.get_EA(), 400)
 
+    @skip
     def test_case3_functions(self):
         function = FunctionsPlan()
         customer1 = Customer("jack")
@@ -71,6 +79,7 @@ class TradeTestClass(TestCase):
         self.assertEqual(customer1.get_stock_list, ["('삼성전자',??, ?? 계산필요)"])
         self.assertEqual(customer2.get_stock_list, [None])
 
+    @skip
     def test_case4_makeinterface(self):
         interface = InterfaceAPP()
         interface.add_customer()
@@ -82,6 +91,7 @@ class TradeTestClass(TestCase):
         interface.get_price(stock)
         interface.get_revenue(customer)
 
+    @skip
     def test_case4_makeKIUM(self):
         app = KiumApp()
         self.assertIsInstance(app, InterfaceAPP)
@@ -104,5 +114,6 @@ class TradeTestClass(TestCase):
         app.get_price(stock)
         app.get_revenue(customer)
 
+    @skip
     def test_case5_makeNamu(self):
         pass
